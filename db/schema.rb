@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625225304) do
+ActiveRecord::Schema.define(version: 20160625235147) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160625225304) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "slug"
+    t.string   "image_url"
   end
 
   add_index "tournaments", ["slug"], name: "index_tournaments_on_slug", unique: true
