@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625235147) do
+ActiveRecord::Schema.define(version: 20160626001655) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -34,21 +34,28 @@ ActiveRecord::Schema.define(version: 20160625235147) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "tournament_id"
+    t.string   "place"
   end
 
   add_index "games", ["tournament_id"], name: "index_games_on_tournament_id"
 
   create_table "stats", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "team_id"
     t.integer  "game_id"
+    t.integer  "shots"
+    t.integer  "fauls"
+    t.integer  "offsides"
+    t.integer  "ball_possession"
+    t.integer  "score"
   end
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "image_url"
   end
 
   create_table "tournaments", force: :cascade do |t|
